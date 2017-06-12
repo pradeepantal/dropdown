@@ -1,0 +1,72 @@
+*,*:after,*:before {
+    box-sizing: border-box;
+}
+.wrapper {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid grey;
+    cursor: pointer;
+    outline: none;
+}
+.wrapper:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -3px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: grey transparent;
+    pointer-events: none;
+}
+.wrapper .dropdown {
+    position: absolute;
+    top: 60%;
+    left: -1px;
+    right: 0px;
+    border: 1px solid grey;
+     padding: 0;
+    background: white;
+    transition: all 0.3s ease-out;
+    list-style: none;
+    opacity: 0;
+    pointer-events: none;
+    height: 200px;
+    overflow: auto;
+}
+
+.wrapper input[type=text] {
+    border: 0px;
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+}
+
+.wrapper .dropdown li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    transition: all 0.3s ease-out;
+}
+ 
+.wrapper .dropdown li:hover a {
+    color: grey;
+    background-color: darkgrey;
+}
+.wrapper.active:after {
+    border-width: 0 6px 6px 6px;
+}
+ 
+.wrapper.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.title{
+    margin: 0 auto;
+}

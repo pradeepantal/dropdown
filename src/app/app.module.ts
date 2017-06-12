@@ -2,15 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { GamesService } from './services/games.service';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { SearchFilterPipe } from './pipes/searchfilter.pipe';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DropdownComponent,
+    SearchFilterPipe
+   
+   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [GamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

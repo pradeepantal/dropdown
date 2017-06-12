@@ -1,0 +1,6 @@
+<div id="dd" [class.active]="selected === true" (click)="onSelect()" class="wrapper" >
+<input #search (keyup)="0" id="search"  class="combo"   type="text"  [readonly]="!selected" placeholder="{{ selected ? searchPlaceHolder : defaultValue}}"/>
+  <ul class="dropdown" >
+    <li *ngFor="let item of (itemData |  searchfilter :search.value)"><a href="#"> <input type="checkbox" value="{{item.id}}" (click)="onCheck(item.name)" />{{item.name}}</a></li>
+  </ul>
+</div>
